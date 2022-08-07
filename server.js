@@ -27,14 +27,14 @@ function dimLights(brightness) {
 
 function checkErrors(data) {
   const isCorrectPlayer =
-    (settings.PLAYER_NAME.length > 0 && data.Player.title == settings.PLAYER_NAME) ||
-    settings.PLAYER_NAME.length == 0;
+    (settings.PLAYER_UUID.length > 0 && data.Player.uuid == settings.PLAYER_UUID) ||
+    settings.PLAYER_UUID.length == 0;
+
   if (!clientList[settings.DEVICE_NAME]) {
     console.log(`${settings.DEVICE_NAME} not found!`);
     return false;
   }
-  if (!isCorrectPlayer) return false;
-  if (!data.Player.local) return false;
+  if (!isCorrectPlayer || !data.Player.local) return false;
   return true;
 }
 
@@ -50,9 +50,9 @@ function handleRequest(req) {
     };
     dimLights(event[data.event].dim);
     console.log(
-      `${data.Metadata.title} ${event[data.event].alias}: Settings lights to ${
-        event[data.event].dim
-      }%`
+      `Media ${event[data.event].alias}\nMedia Title: ${data.Metadata.title}\nPlayer UUID: ${
+        data.Player.uuid
+      }\nSettings lights to ${event[data.event].dim}%\n`
     );
   } catch (e) {
     console.log(e);
