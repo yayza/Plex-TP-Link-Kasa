@@ -1,0 +1,4 @@
+// _sysInfo.brightness (0-100));
+// _sysInfo.relay_state) (0 off, 1 on);
+// device.setPowerState(true)
+// Modes: "none", "instant_on_off", "gentle_on_off"

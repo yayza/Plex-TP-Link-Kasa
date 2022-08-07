@@ -1,0 +1,18 @@
+{
+  "name": "plex-kasa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "multer": "^1.4.5-lts.1",
+    "tplink-smarthome-api": "^4.2.0"
+  }
+}
