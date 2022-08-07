@@ -1,6 +1,8 @@
 # Plex-TP-Link-Kasa
 Dim Kasa lights using Plex webhooks
 
+Will dim lights on media playing and brighten lights when pausing or stopping
+
 To use:
 1. Install modules using `npm install`
 2. Add `http://localhost:44010/plex` to your Plex webhooks
